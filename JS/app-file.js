@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsSection = document.querySelector('.results-section');
     const currentQuestionElement = document.getElementById('current-question');
     const progressBar = document.querySelector('.progress');
+    const questionCounter = document.getElementById('question-counter');
     
     // Buttons
     const startQuizButton = document.getElementById('start-quiz');
@@ -26,40 +27,23 @@ document.addEventListener('DOMContentLoaded', function() {
     reviewQuizButton.addEventListener('click', reviewQuiz);
     restartQuizButton.addEventListener('click', restartQuiz);
     
-    // Initialize category expandable functionality
-    initCategoryExpandables();
-    
     // Initialize available counts for each category
     updateAvailableCounts();
     
-    // Function to initialize expandable categories
-    function initCategoryExpandables() {
-        const categoryHeaders = document.querySelectorAll('.category-header');
-        
-        // Initially collapse all categories except the first one
-        categoryHeaders.forEach((header, index) => {
-            const content = header.nextElementSibling;
-            if (index === 0) {
-                // Keep the first category open
-                header.classList.add('active');
-                content.style.display = 'block';
-            } else {
-                // Collapse all other categories
-                content.style.display = 'none';
-            }
-            
-            // Add click event listener
-            header.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const content = this.nextElementSibling;
-                
-                if (content.style.display === 'block') {
-                    content.style.display = 'none';
-                } else {
-                    content.style.display = 'block';
-                }
-            });
+    // Update the question counter when inputs change
+    const questionInputs = document.querySelectorAll('input[type="number"]');
+    questionInputs.forEach(input => {
+        input.addEventListener('change', updateTotalQuestionCount);
+        input.addEventListener('input', updateTotalQuestionCount);
+    });
+    
+    // Update total question count
+    function updateTotalQuestionCount() {
+        let total = 0;
+        questionInputs.forEach(input => {
+            total += parseInt(input.value) || 0;
         });
+        questionCounter.textContent = total;
     }
     
     // Quiz functions
