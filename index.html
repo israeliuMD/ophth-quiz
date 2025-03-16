@@ -16,11 +16,11 @@
         
         <div class="setup-section">
             <h2>Quiz Setup</h2>
-            <p>Select a topic and choose how many questions you want from each year:</p>
+            <p>Click on a topic to select questions from different years:</p>
             
             <!-- Horizontal Topics Row -->
             <div class="topics-row">
-                <button class="topic-btn active" data-topic="fundamentals">
+                <button class="topic-btn" data-topic="fundamentals">
                     <i class="fas fa-book-medical topic-icon"></i>Fundamentals<span class="count-badge">22</span>
                 </button>
                 <button class="topic-btn" data-topic="optics">
@@ -58,17 +58,17 @@
                 </button>
             </div>
             
-            <!-- Fundamentals Content -->
-            <div class="topic-content active" data-topic="fundamentals">
-                <div class="years-tabs">
-                    <div class="year-tab active" data-year="2017">2017</div>
-                    <div class="year-tab" data-year="2018">2018</div>
-                    <div class="year-tab" data-year="2019">2019</div>
+            <!-- Fundamentals Dropdown -->
+            <div class="topic-dropdown" id="fundamentals-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-book-medical"></i> Fundamentals Questions
+                    </div>
                 </div>
                 
-                <div class="year-content active" data-year="2017">
-                    <div class="question-selector">
-                        <div class="category-name">Fundamentals 2017</div>
+                <div class="years-container">
+                    <div class="year-card">
+                        <div class="year-header">2017</div>
                         <div class="question-count">
                             <label>
                                 Number of questions:
@@ -77,64 +77,155 @@
                             <div class="available-count">/ 22 available</div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="year-content" data-year="2018">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Fundamentals 2018</p>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2018</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="year-content" data-year="2019">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Fundamentals 2019</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Optics Content -->
-            <div class="topic-content" data-topic="optics">
-                <div class="years-tabs">
-                    <div class="year-tab active" data-year="2017">2017</div>
-                    <div class="year-tab" data-year="2018">2018</div>
-                    <div class="year-tab" data-year="2019">2019</div>
-                </div>
-                
-                <div class="year-content active" data-year="2017">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Optics 2017</p>
-                    </div>
-                </div>
-                
-                <div class="year-content" data-year="2018">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Optics 2018</p>
-                    </div>
-                </div>
-                
-                <div class="year-content" data-year="2019">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Optics 2019</p>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2019</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Glaucoma Content -->
-            <div class="topic-content" data-topic="glaucoma">
-                <div class="years-tabs">
-                    <div class="year-tab active" data-year="2017">2017</div>
-                    <div class="year-tab" data-year="2018">2018</div>
-                    <div class="year-tab" data-year="2019">2019</div>
+            <!-- Optics Dropdown -->
+            <div class="topic-dropdown" id="optics-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-glasses"></i> Optics Questions
+                    </div>
                 </div>
                 
-                <div class="year-content active" data-year="2017">
-                    <div class="question-selector">
-                        <div class="category-name">Glaucoma 2017</div>
+                <div class="years-container">
+                    <div class="year-card">
+                        <div class="year-header">2017</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
+                    </div>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2018</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
+                    </div>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2019</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pathology Dropdown -->
+            <div class="topic-dropdown" id="pathology-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-microscope"></i> Pathology Questions
+                    </div>
+                </div>
+                
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No questions available for Pathology</p>
+                </div>
+            </div>
+            
+            <!-- Neuro Dropdown -->
+            <div class="topic-dropdown" id="neuro-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-brain"></i> Neuro Questions
+                    </div>
+                </div>
+                
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No questions available for Neuro</p>
+                </div>
+            </div>
+            
+            <!-- Pediatrics Dropdown -->
+            <div class="topic-dropdown" id="pediatrics-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-child"></i> Pediatrics Questions
+                    </div>
+                </div>
+                
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No questions available for Pediatrics</p>
+                </div>
+            </div>
+            
+            <!-- Oculoplastics Dropdown -->
+            <div class="topic-dropdown" id="oculoplastics-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-user-md"></i> Oculoplastics Questions
+                    </div>
+                </div>
+                
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No questions available for Oculoplastics</p>
+                </div>
+            </div>
+            
+            <!-- Cornea Dropdown -->
+            <div class="topic-dropdown" id="cornea-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="far fa-eye"></i> Cornea Questions
+                    </div>
+                </div>
+                
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No questions available for Cornea</p>
+                </div>
+            </div>
+            
+            <!-- Uveitis Dropdown -->
+            <div class="topic-dropdown" id="uveitis-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-disease"></i> Uveitis Questions
+                    </div>
+                </div>
+                
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No questions available for Uveitis</p>
+                </div>
+            </div>
+            
+            <!-- Glaucoma Dropdown -->
+            <div class="topic-dropdown" id="glaucoma-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-tint"></i> Glaucoma Questions
+                    </div>
+                </div>
+                
+                <div class="years-container">
+                    <div class="year-card">
+                        <div class="year-header">2017</div>
                         <div class="question-count">
                             <label>
                                 Number of questions:
@@ -143,34 +234,36 @@
                             <div class="available-count">/ 9 available</div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="year-content" data-year="2018">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Glaucoma 2018</p>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2018</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="year-content" data-year="2019">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Glaucoma 2019</p>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2019</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Lens Content -->
-            <div class="topic-content" data-topic="lens">
-                <div class="years-tabs">
-                    <div class="year-tab active" data-year="2017">2017</div>
-                    <div class="year-tab" data-year="2018">2018</div>
-                    <div class="year-tab" data-year="2019">2019</div>
+            <!-- Lens/Cataract Dropdown -->
+            <div class="topic-dropdown" id="lens-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-search-plus"></i> Cataract/Lens Questions
+                    </div>
                 </div>
                 
-                <div class="year-content active" data-year="2017">
-                    <div class="question-selector">
-                        <div class="category-name">Cataract/Lens 2017</div>
+                <div class="years-container">
+                    <div class="year-card">
+                        <div class="year-header">2017</div>
                         <div class="question-count">
                             <label>
                                 Number of questions:
@@ -179,34 +272,36 @@
                             <div class="available-count">/ 10 available</div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="year-content" data-year="2018">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Cataract/Lens 2018</p>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2018</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="year-content" data-year="2019">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Cataract/Lens 2019</p>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2019</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Retina Content -->
-            <div class="topic-content" data-topic="retina">
-                <div class="years-tabs">
-                    <div class="year-tab active" data-year="2017">2017</div>
-                    <div class="year-tab" data-year="2018">2018</div>
-                    <div class="year-tab" data-year="2019">2019</div>
+            <!-- Retina Dropdown -->
+            <div class="topic-dropdown" id="retina-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-eye"></i> Retina Questions
+                    </div>
                 </div>
                 
-                <div class="year-content active" data-year="2017">
-                    <div class="question-selector">
-                        <div class="category-name">Retina 2017</div>
+                <div class="years-container">
+                    <div class="year-card">
+                        <div class="year-header">2017</div>
                         <div class="question-count">
                             <label>
                                 Number of questions:
@@ -215,67 +310,33 @@
                             <div class="available-count">/ 13 available</div>
                         </div>
                     </div>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2018</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
+                    </div>
+                    
+                    <div class="year-card">
+                        <div class="year-header">2019</div>
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>No questions available</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="year-content" data-year="2018">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Retina 2018</p>
+            </div>
+            
+            <!-- Refractive Dropdown -->
+            <div class="topic-dropdown" id="refractive-dropdown">
+                <div class="topic-dropdown-header">
+                    <div class="topic-dropdown-title">
+                        <i class="fas fa-low-vision"></i> Refractive Questions
                     </div>
                 </div>
                 
-                <div class="year-content" data-year="2019">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No questions available for Retina 2019</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Create similar blocks for other topics with empty states -->
-            <div class="topic-content" data-topic="pathology">
-                <div class="empty-state">
-                    <i class="fas fa-inbox"></i>
-                    <p>No questions available for Pathology</p>
-                </div>
-            </div>
-            
-            <div class="topic-content" data-topic="neuro">
-                <div class="empty-state">
-                    <i class="fas fa-inbox"></i>
-                    <p>No questions available for Neuro</p>
-                </div>
-            </div>
-            
-            <div class="topic-content" data-topic="pediatrics">
-                <div class="empty-state">
-                    <i class="fas fa-inbox"></i>
-                    <p>No questions available for Pediatrics</p>
-                </div>
-            </div>
-            
-            <div class="topic-content" data-topic="oculoplastics">
-                <div class="empty-state">
-                    <i class="fas fa-inbox"></i>
-                    <p>No questions available for Oculoplastics</p>
-                </div>
-            </div>
-            
-            <div class="topic-content" data-topic="cornea">
-                <div class="empty-state">
-                    <i class="fas fa-inbox"></i>
-                    <p>No questions available for Cornea</p>
-                </div>
-            </div>
-            
-            <div class="topic-content" data-topic="uveitis">
-                <div class="empty-state">
-                    <i class="fas fa-inbox"></i>
-                    <p>No questions available for Uveitis</p>
-                </div>
-            </div>
-            
-            <div class="topic-content" data-topic="refractive">
                 <div class="empty-state">
                     <i class="fas fa-inbox"></i>
                     <p>No questions available for Refractive</p>
