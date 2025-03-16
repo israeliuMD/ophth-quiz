@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ophthalmology MCQ Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -16,401 +18,405 @@
             <h2>Quiz Setup</h2>
             <p>Choose how many questions you want from each category:</p>
             
-            <!-- Fundamentals Category -->
-            <div class="topic-category">
-                <h3 class="category-header">1. Fundamentals</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="fundamentals-2017-count" min="0" max="22" value="0">
-                            <span>/ 22 available</span>
-                        </label>
+            <div class="categories-grid">
+                <!-- Fundamentals Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-book-medical category-icon"></i>Fundamentals<span class="count-badge">22</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="fundamentals-2017-count" min="0" max="22" value="0">
+                                <span>/ 22 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="fundamentals-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="fundamentals-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
                     </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="fundamentals-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
+                </div>
+                
+                <!-- Optics Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-glasses category-icon"></i>Optics<span class="count-badge">0</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="optics-2017-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="optics-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="optics-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
                     </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="fundamentals-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
+                </div>
+                
+                <!-- Pathology Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-microscope category-icon"></i>Pathology<span class="count-badge">0</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="pathology-2017-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="pathology-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="pathology-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Neuro Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-brain category-icon"></i>Neuro<span class="count-badge">0</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="neuro-2017-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="neuro-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="neuro-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pediatrics Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-child category-icon"></i>Pediatrics<span class="count-badge">0</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="pediatrics-2017-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="pediatrics-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="pediatrics-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Oculoplastics Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-user-md category-icon"></i>Oculoplastics<span class="count-badge">0</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="oculoplastics-2017-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="oculoplastics-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="oculoplastics-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cornea Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="far fa-eye category-icon"></i>Cornea<span class="count-badge">0</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="cornea-2017-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="cornea-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="cornea-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Uveitis Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-disease category-icon"></i>Uveitis<span class="count-badge">0</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="uveitis-2017-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="uveitis-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="uveitis-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Glaucoma Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-tint category-icon"></i>Glaucoma<span class="count-badge">9</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="glaucoma-2017-count" min="0" max="9" value="0">
+                                <span>/ 9 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="glaucoma-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="glaucoma-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cataract/Lens Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-search-plus category-icon"></i>Cataract/Lens<span class="count-badge">10</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="lens-2017-count" min="0" max="10" value="0">
+                                <span>/ 10 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="lens-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="lens-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Retina Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-eye category-icon"></i>Retina<span class="count-badge">13</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="retina-2017-count" min="0" max="13" value="0">
+                                <span>/ 13 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="retina-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="retina-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Refractive Category -->
+                <div class="topic-category">
+                    <h3 class="category-header"><i class="fas fa-low-vision category-icon"></i>Refractive<span class="count-badge">0</span></h3>
+                    <div class="category-content">
+                        <div class="category">
+                            <h4>2017</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="refractive-2017-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2018</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="refractive-2018-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
+                        
+                        <div class="category">
+                            <h4>2019</h4>
+                            <label>
+                                Number of questions:
+                                <input type="number" id="refractive-2019-count" min="0" max="0" value="0">
+                                <span>/ 0 available</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Optics Category -->
-            <div class="topic-category">
-                <h3 class="category-header">2. Optics</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="optics-2017-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="optics-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="optics-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Pathology Category -->
-            <div class="topic-category">
-                <h3 class="category-header">3. Pathology</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="pathology-2017-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="pathology-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="pathology-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Neuro Category -->
-            <div class="topic-category">
-                <h3 class="category-header">4. Neuro</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="neuro-2017-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="neuro-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="neuro-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Pediatrics Category -->
-            <div class="topic-category">
-                <h3 class="category-header">5. Pediatrics</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="pediatrics-2017-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="pediatrics-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="pediatrics-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Oculoplastics Category -->
-            <div class="topic-category">
-                <h3 class="category-header">6. Oculoplastics</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="oculoplastics-2017-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="oculoplastics-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="oculoplastics-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Cornea Category -->
-            <div class="topic-category">
-                <h3 class="category-header">7. Cornea</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="cornea-2017-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="cornea-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="cornea-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Uveitis Category -->
-            <div class="topic-category">
-                <h3 class="category-header">8. Uveitis</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="uveitis-2017-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="uveitis-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="uveitis-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Glaucoma Category -->
-            <div class="topic-category">
-                <h3 class="category-header">9. Glaucoma</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="glaucoma-2017-count" min="0" max="9" value="0">
-                            <span>/ 9 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="glaucoma-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="glaucoma-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Cataract/Lens Category -->
-            <div class="topic-category">
-                <h3 class="category-header">10. Cataract/Lens</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="lens-2017-count" min="0" max="10" value="5">
-                            <span>/ 10 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="lens-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="lens-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Retina Category -->
-            <div class="topic-category">
-                <h3 class="category-header">11. Retina</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="retina-2017-count" min="0" max="13" value="0">
-                            <span>/ 13 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="retina-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="retina-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Refractive Category -->
-            <div class="topic-category">
-                <h3 class="category-header">12. Refractive</h3>
-                <div class="category-content">
-                    <div class="category">
-                        <h4>2017</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="refractive-2017-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2018</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="refractive-2018-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                    
-                    <div class="category">
-                        <h4>2019</h4>
-                        <label>
-                            Number of questions:
-                            <input type="number" id="refractive-2019-count" min="0" max="0" value="0">
-                            <span>/ 0 available</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
+            <div class="total-counter">Total selected questions: <span id="question-counter">0</span></div>
             
             <button id="start-quiz">Generate Quiz</button>
         </div>
@@ -423,9 +429,9 @@
             <div id="current-question"></div>
             
             <div class="navigation">
-                <button id="prev-question" class="hidden">Previous Question</button>
-                <button id="next-question">Next Question</button>
-                <button id="finish-quiz" class="hidden">Finish Quiz</button>
+                <button id="prev-question" class="hidden"><i class="fas fa-arrow-left"></i> Previous Question</button>
+                <button id="next-question">Next Question <i class="fas fa-arrow-right"></i></button>
+                <button id="finish-quiz" class="hidden">Finish Quiz <i class="fas fa-check"></i></button>
             </div>
         </div>
         
@@ -438,9 +444,13 @@
                 <div id="correct-count"></div>
             </div>
             
-            <button id="review-quiz">Review Answers</button>
-            <button id="restart-quiz">Start New Quiz</button>
+            <button id="review-quiz"><i class="fas fa-search"></i> Review Answers</button>
+            <button id="restart-quiz"><i class="fas fa-redo"></i> Start New Quiz</button>
         </div>
+    </div>
+    
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
     </div>
     
     <!-- Load question data files first -->
@@ -459,24 +469,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Add click event to all category headers
             const categoryHeaders = document.querySelectorAll('.category-header');
+            const questionInputs = document.querySelectorAll('input[type="number"]');
+            const questionCounter = document.getElementById('question-counter');
+            const scrollTopBtn = document.querySelector('.scroll-top');
             
+            // Update question counter function
+            function updateQuestionCounter() {
+                let total = 0;
+                questionInputs.forEach(input => {
+                    total += parseInt(input.value) || 0;
+                });
+                questionCounter.textContent = total;
+            }
+            
+            // Add input change event listeners
+            questionInputs.forEach(input => {
+                input.addEventListener('change', updateQuestionCounter);
+                input.addEventListener('keyup', updateQuestionCounter);
+            });
+            
+            // Initial counter update
+            updateQuestionCounter();
+            
+            // Category headers click event
             categoryHeaders.forEach(header => {
-                // Set initial state - collapsed except for default open category
+                // Close all dropdowns initially
                 const content = header.nextElementSibling;
-                if (!header.classList.contains('active')) {
-                    content.style.display = 'none';
-                }
+                content.style.display = 'none';
                 
                 // Add click event
-                header.addEventListener('click', function() {
+                header.addEventListener('click', function(e) {
+                    e.preventDefault();
                     this.classList.toggle('active');
                     const content = this.nextElementSibling;
                     
-                    if (content.style.display === 'block' || content.style.display === '') {
+                    if (content.style.display === 'block') {
                         content.style.display = 'none';
                     } else {
+                        // Close all other dropdowns
+                        document.querySelectorAll('.category-content').forEach(item => {
+                            if (item !== content) {
+                                item.style.display = 'none';
+                                item.previousElementSibling.classList.remove('active');
+                            }
+                        });
                         content.style.display = 'block';
                     }
+                });
+            });
+            
+            // Scroll to top functionality
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             });
         });
