@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentQuestionElement = document.getElementById('current-question');
     const progressBar = document.querySelector('.progress');
     const questionCounter = document.getElementById('question-counter');
+    const topicButtons = document.querySelectorAll('.topic-btn');
+    const topicContents = document.querySelectorAll('.topic-content');
+    const yearTabs = document.querySelectorAll('.year-tab');
+    const yearContents = document.querySelectorAll('.year-content');
+    const scrollTopBtn = document.querySelector('.scroll-top');
     
     // Buttons
     const startQuizButton = document.getElementById('start-quiz');
@@ -27,14 +32,55 @@ document.addEventListener('DOMContentLoaded', function() {
     reviewQuizButton.addEventListener('click', reviewQuiz);
     restartQuizButton.addEventListener('click', restartQuiz);
     
-    // Initialize available counts for each category
-    updateAvailableCounts();
-    
     // Update the question counter when inputs change
     const questionInputs = document.querySelectorAll('input[type="number"]');
     questionInputs.forEach(input => {
         input.addEventListener('change', updateTotalQuestionCount);
         input.addEventListener('input', updateTotalQuestionCount);
+    });
+    
+    // Topic buttons click event
+    topicButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            topicButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all topic contents
+            topicContents.forEach(content => content.classList.remove('active'));
+            
+            // Show corresponding topic content
+            const topicId = this.getAttribute('data-topic');
+            const topicContent = document.querySelector(`.topic-content[data-topic="${topicId}"]`);
+            if (topicContent) {
+                topicContent.classList.add('active');
+            }
+        });
+    });
+    
+    // Year tabs click event
+    yearTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Find parent topic content
+            const topicContent = this.closest('.topic-content');
+            
+            // Remove active class from all tabs in this topic
+            topicContent.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Hide all year contents in this topic
+            topicContent.querySelectorAll('.year-content').forEach(content => content.classList.remove('active'));
+            
+            // Show corresponding year content
+            const yearId = this.getAttribute('data-year');
+            const yearContent = topicContent.querySelector(`.year-content[data-year="${yearId}"]`);
+            if (yearContent) {
+                yearContent.classList.add('active');
+            }
+        });
     });
     
     // Update total question count
@@ -45,6 +91,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         questionCounter.textContent = total;
     }
+    
+    // Initialize available counts for each category
+    function updateAvailableCounts() {
+        const categoryInputs = document.querySelectorAll('input[type="number"]');
+        categoryInputs.forEach(input => {
+            const categoryId = input.id.replace('-count', '');
+            const maxCount = questionsDb[categoryId] ? questionsDb[categoryId].length : 0;
+            
+            // Update max attribute
+            input.setAttribute('max', maxCount);
+            
+            // Disable if no questions available
+            if (maxCount === 0) {
+                input.disabled = true;
+                input.value = 0;
+            }
+        });
+        
+        // Update initial count
+        updateTotalQuestionCount();
+    }
+    
+    // Call initialize function
+    updateAvailableCounts();
+    
+    // Scroll to top functionality
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+    
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
     
     // Quiz functions
     function startQuiz() {
@@ -324,28 +410,4 @@ document.addEventListener('DOMContentLoaded', function() {
             finishQuiz();
         }
     });
-    
-    // Update available questions counts
-    function updateAvailableCounts() {
-        const categoryInputs = document.querySelectorAll('input[type="number"]');
-        categoryInputs.forEach(input => {
-            const categoryId = input.id.replace('-count', '');
-            const maxCount = questionsDb[categoryId] ? questionsDb[categoryId].length : 0;
-            
-            // Update max attribute
-            input.setAttribute('max', maxCount);
-            
-            // Update displayed count
-            const countSpan = input.nextElementSibling;
-            if (countSpan) {
-                countSpan.textContent = `/ ${maxCount} available`;
-            }
-            
-            // Disable if no questions available
-            if (maxCount === 0) {
-                input.disabled = true;
-                input.value = 0;
-            }
-        });
-    }
 });
