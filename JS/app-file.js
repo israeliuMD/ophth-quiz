@@ -26,6 +26,42 @@ document.addEventListener('DOMContentLoaded', function() {
     reviewQuizButton.addEventListener('click', reviewQuiz);
     restartQuizButton.addEventListener('click', restartQuiz);
     
+    // Initialize category expandable functionality
+    initCategoryExpandables();
+    
+    // Initialize available counts for each category
+    updateAvailableCounts();
+    
+    // Function to initialize expandable categories
+    function initCategoryExpandables() {
+        const categoryHeaders = document.querySelectorAll('.category-header');
+        
+        // Initially collapse all categories except the first one
+        categoryHeaders.forEach((header, index) => {
+            const content = header.nextElementSibling;
+            if (index === 0) {
+                // Keep the first category open
+                header.classList.add('active');
+                content.style.display = 'block';
+            } else {
+                // Collapse all other categories
+                content.style.display = 'none';
+            }
+            
+            // Add click event listener
+            header.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    }
+    
     // Quiz functions
     function startQuiz() {
         // Collect category counts
@@ -328,7 +364,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Initialize counts
-    updateAvailableCounts();
 });
