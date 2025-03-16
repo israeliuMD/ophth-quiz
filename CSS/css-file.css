@@ -54,17 +54,46 @@ h2 {
 }
 
 .topic-category {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.topic-category h3 {
+.category-header {
     margin: 0;
     padding: 15px;
     background-color: var(--primary-color);
     color: white;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.category-header:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Add dropdown indicator */
+.category-header::after {
+    content: '+';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.category-header.active::after {
+    content: '-';
+}
+
+.category-content {
+    padding: 0;
+    max-height: 1000px; /* Set a max height that will accommodate content */
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
 }
 
 .category {
@@ -220,6 +249,27 @@ button:hover {
     background-color: var(--primary-color);
     width: 0%;
     transition: width 0.3s ease;
+}
+
+/* Added styles for category toggles */
+.topic-category {
+    transition: all 0.3s ease;
+}
+
+.topic-category:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Make categories list more compact */
+.setup-section {
+    padding-bottom: 10px;
+}
+
+#start-quiz {
+    display: block;
+    margin: 25px auto 10px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
