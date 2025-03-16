@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ophthalmology MCQ Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ophthalmology MCQ Quiz</h1>
+        </header>
+        
+        <div class="setup-section">
+            <h2>Quiz Setup</h2>
+            <p>Choose how many questions you want from each category:</p>
+            
+            <div class="topic-category">
+                <h3>1. Lens and Cataract</h3>
+                
+                <div class="category">
+                    <h4>2017</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="lens-2017-count" min="0" max="10" value="5">
+                        <span>/ 10 available</span>
+                    </label>
+                </div>
+                
+                <div class="category">
+                    <h4>2018</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="lens-2018-count" min="0" max="0" value="0">
+                        <span>/ 0 available</span>
+                    </label>
+                </div>
+                
+                <div class="category">
+                    <h4>2019</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="lens-2019-count" min="0" max="0" value="0">
+                        <span>/ 0 available</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="topic-category">
+                <h3>2. Glaucoma</h3>
+                
+                <div class="category">
+                    <h4>2017</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="glaucoma-2017-count" min="0" max="9" value="0">
+                        <span>/ 9 available</span>
+                    </label>
+                </div>
+                
+                <div class="category">
+                    <h4>2018</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="glaucoma-2018-count" min="0" max="0" value="0">
+                        <span>/ 0 available</span>
+                    </label>
+                </div>
+                
+                <div class="category">
+                    <h4>2019</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="glaucoma-2019-count" min="0" max="0" value="0">
+                        <span>/ 0 available</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="topic-category">
+                <h3>3. Retina</h3>
+                
+                <div class="category">
+                    <h4>2017</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="retina-2017-count" min="0" max="13" value="0">
+                        <span>/ 13 available</span>
+                    </label>
+                </div>
+                
+                <div class="category">
+                    <h4>2018</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="retina-2018-count" min="0" max="0" value="0">
+                        <span>/ 0 available</span>
+                    </label>
+                </div>
+                
+                <div class="category">
+                    <h4>2019</h4>
+                    <label>
+                        Number of questions:
+                        <input type="number" id="retina-2019-count" min="0" max="0" value="0">
+                        <span>/ 0 available</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button id="start-quiz">Generate Quiz</button>
+        </div>
+        
+        <div class="quiz-section hidden">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            
+            <div id="current-question"></div>
+            
+            <div class="navigation">
+                <button id="prev-question" class="hidden">Previous Question</button>
+                <button id="next-question">Next Question</button>
+                <button id="finish-quiz" class="hidden">Finish Quiz</button>
+            </div>
+        </div>
+        
+        <div class="results-section hidden">
+            <h2>Quiz Results</h2>
+            
+            <div class="results">
+                <p>You've completed the quiz!</p>
+                <div class="score">Score: <span id="final-score">0</span>%</div>
+                <div id="correct-count"></div>
+            </div>
+            
+            <button id="review-quiz">Review Answers</button>
+            <button id="restart-quiz">Start New Quiz</button>
+        </div>
+    </div>
+    
+    <!-- Load question data files first -->
+    <script src="js/data/lens-2017.js"></script>
+    <script src="js/data/glaucoma-2017.js"></script>
+    <script src="js/data/retina-2017.js"></script>
+    
+    <!-- Then load the main application scripts -->
+    <script src="js/questions.js"></script>
+    <script src="js/quiz-engine.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
