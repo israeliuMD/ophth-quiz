@@ -11,9 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressBar = document.querySelector('.progress');
     const questionCounter = document.getElementById('question-counter');
     const topicButtons = document.querySelectorAll('.topic-btn');
-    const topicContents = document.querySelectorAll('.topic-content');
-    const yearTabs = document.querySelectorAll('.year-tab');
-    const yearContents = document.querySelectorAll('.year-content');
+    const topicDropdowns = document.querySelectorAll('.topic-dropdown');
     const scrollTopBtn = document.querySelector('.scroll-top');
     
     // Buttons
@@ -42,44 +40,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Topic buttons click event
     topicButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            topicButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Hide all topic contents
-            topicContents.forEach(content => content.classList.remove('active'));
-            
-            // Show corresponding topic content
             const topicId = this.getAttribute('data-topic');
-            const topicContent = document.querySelector(`.topic-content[data-topic="${topicId}"]`);
-            if (topicContent) {
-                topicContent.classList.add('active');
+            const targetDropdown = document.getElementById(`${topicId}-dropdown`);
+            
+            // If clicking an already active topic, close it
+            if (this.classList.contains('active')) {
+                this.classList.remove('active');
+                targetDropdown.classList.remove('active');
+                return;
             }
-        });
-    });
-    
-    // Year tabs click event
-    yearTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Find parent topic content
-            const topicContent = this.closest('.topic-content');
             
-            // Remove active class from all tabs in this topic
-            topicContent.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active'));
+            // Remove active class from all buttons and dropdowns
+            topicButtons.forEach(btn => btn.classList.remove('active'));
+            topicDropdowns.forEach(dropdown => dropdown.classList.remove('active'));
             
-            // Add active class to clicked tab
+            // Add active class to clicked button and corresponding dropdown
             this.classList.add('active');
+            targetDropdown.classList.add('active');
             
-            // Hide all year contents in this topic
-            topicContent.querySelectorAll('.year-content').forEach(content => content.classList.remove('active'));
-            
-            // Show corresponding year content
-            const yearId = this.getAttribute('data-year');
-            const yearContent = topicContent.querySelector(`.year-content[data-year="${yearId}"]`);
-            if (yearContent) {
-                yearContent.classList.add('active');
-            }
+            // Smooth scroll to the dropdown
+            targetDropdown.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
     });
     
@@ -106,6 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
             if (maxCount === 0) {
                 input.disabled = true;
                 input.value = 0;
+            }
+            
+            // Update count badges on topic buttons
+            const topicId = categoryId.split('-')[0]; // Extract topic from category ID
+            const countBadge = document.querySelector(`.topic-btn[data-topic="${topicId}"] .count-badge`);
+            if (countBadge && maxCount > 0) {
+                // If we already have a count for this topic, add to it
+                const currentCount = parseInt(countBadge.textContent) || 0;
+                if (currentCount === 0) {
+                    countBadge.textContent = maxCount;
+                }
             }
         });
         
